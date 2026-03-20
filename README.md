@@ -76,8 +76,5 @@ npm install
 npm run dev
 ```
 
-## 👥 Team FinBrains
-Built with ❤️ for FINBRAINS
-
 ## 📄 License
 MIT License
