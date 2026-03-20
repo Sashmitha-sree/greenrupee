@@ -72,7 +72,7 @@ npm run dev
 ```
 
 ## 👥 Team ByteLeaf
-Built with ❤️ for [Hackathon Name]
+Built with ❤️ for FINBRAINS
 
 ## 📄 License
 MIT License
