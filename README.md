@@ -76,7 +76,7 @@ npm install
 npm run dev
 ```
 
-## 👥 Team ByteLeaf
+## 👥 Team FinBrains
 Built with ❤️ for FINBRAINS
 
 ## 📄 License
