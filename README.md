@@ -56,6 +56,11 @@ All 100% free Indian government data:
 - EU CSDDD (July 2024)
 - RBI Priority Sector Guidelines
 
+## 🏗 Architecture
+
+<img width="1296" height="953" alt="image" src="https://github.com/user-attachments/assets/68bcd226-24a4-4c0b-a246-bf0fd728ee4b" />
+
+
 ## 🏃 Run Locally
 ```bash
 # Clone the repo
