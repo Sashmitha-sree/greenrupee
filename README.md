@@ -58,8 +58,7 @@ All 100% free Indian government data:
 
 ## 🏗 Architecture
 
-<img width="1296" height="953" alt="image" src="https://github.com/user-attachments/assets/68bcd226-24a4-4c0b-a246-bf0fd728ee4b" />
-
+<img width="1283" height="964" alt="image" src="https://github.com/user-attachments/assets/fc9fd18c-71c0-46b6-ad24-0b3f9462304e" />
 
 ## 🏃 Run Locally
 ```bash
