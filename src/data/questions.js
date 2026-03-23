@@ -201,20 +201,20 @@ export const getRecommendations = (scores) => {
 
   if (ePct < 0.5) {
     recos.push({
-      icon: '☀️',
+      iconName: 'sun',
       title: 'Switch to renewable energy',
       desc: 'Installing rooftop solar panels can reduce electricity bills by 30–50% and significantly boost your Environment score.',
       priority: 'high',
     });
     recos.push({
-      icon: '♻️',
+      iconName: 'recycle',
       title: 'Implement a waste segregation system',
       desc: 'Set up 3 bins — organic, recyclable, non-recyclable. Contact your local municipality for pickup partnerships.',
       priority: 'high',
     });
   } else if (ePct < 0.8) {
     recos.push({
-      icon: '💧',
+      iconName: 'water',
       title: 'Track your water consumption',
       desc: 'Use a basic meter or app to track monthly water usage. Set reduction targets of 10% per year.',
       priority: 'mid',
@@ -223,20 +223,20 @@ export const getRecommendations = (scores) => {
 
   if (sPct < 0.5) {
     recos.push({
-      icon: '🪖',
+      iconName: 'hardhat',
       title: 'Provide worker safety gear (PPE)',
       desc: 'Helmets, gloves, masks — basic PPE reduces accidents and is mandatory under the Factories Act.',
       priority: 'high',
     });
     recos.push({
-      icon: '💰',
+      iconName: 'money',
       title: 'Formalize wage structures',
       desc: 'Document all wages and ensure compliance with state minimum wage laws. This protects both you and your workers.',
       priority: 'high',
     });
   } else if (sPct < 0.8) {
     recos.push({
-      icon: '📚',
+      iconName: 'book',
       title: 'Start a monthly skill training program',
       desc: 'Partner with local ITI or Skill India centers for free or subsidized worker training sessions.',
       priority: 'mid',
@@ -245,20 +245,20 @@ export const getRecommendations = (scores) => {
 
   if (gPct < 0.5) {
     recos.push({
-      icon: '📒',
+      iconName: 'clipboard',
       title: 'Register on Udyam Portal (Free)',
       desc: 'Udyam registration is free, takes 10 minutes, and unlocks government schemes, lower loan rates & ESG credibility.',
       priority: 'high',
     });
     recos.push({
-      icon: '🧾',
+      iconName: 'invoice',
       title: 'Start maintaining digital accounts',
       desc: 'Use free tools like Vyapar app or Tally to record income/expenses. This is required for any bank loan.',
       priority: 'high',
     });
   } else if (gPct < 0.8) {
     recos.push({
-      icon: '📋',
+      iconName: 'handshake',
       title: 'Document your business ethics policy',
       desc: 'Write a 1-page document covering: fair pay, no discrimination, customer honesty. Share it with your team.',
       priority: 'mid',
@@ -267,13 +267,13 @@ export const getRecommendations = (scores) => {
 
   if (recos.length === 0) {
     recos.push({
-      icon: '🏆',
+      iconName: 'trophy',
       title: 'Maintain your excellence',
       desc: 'Your ESG practices are excellent! Consider getting a third-party audit to officially certify your score.',
       priority: 'low',
     });
     recos.push({
-      icon: '🌐',
+      iconName: 'globe',
       title: 'Share your ESG story',
       desc: 'Publish your sustainability practices on your website and LinkedIn to attract ESG-conscious buyers globally.',
       priority: 'low',

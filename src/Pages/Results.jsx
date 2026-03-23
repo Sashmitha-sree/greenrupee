@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import {
+          FaLeaf, FaUsers, FaBuilding,
+          FaSun, FaRecycle, FaHardHat, FaMoneyBillWave,
+          FaBook, FaClipboardList, FaFileInvoiceDollar,
+          FaHandshake, FaTrophy, FaGlobe, FaRedo, FaFileAlt
+        } from 'react-icons/fa';
+import {
   RadarChart, PolarGrid, PolarAngleAxis, Radar,
   ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, Cell,
 } from 'recharts';
@@ -40,6 +46,21 @@ function ScoreRing({ score }) {
 const COLORS = { E: '#52b788', S: '#e9c46a', G: '#74b3ce' };
 
 export default function Results({ answers, businessInfo, scores, onRestart }) {
+  const RecoIcon = ({ name }) => {
+    const icons = {
+      sun:       <FaSun size={22} color="#e9c46a" />,
+      recycle:   <FaRecycle size={22} color="#52b788" />,
+      hardhat:   <FaHardHat size={22} color="#e9c46a" />,
+      money:     <FaMoneyBillWave size={22} color="#52b788" />,
+      book:      <FaBook size={22} color="#74b3ce" />,
+      clipboard: <FaClipboardList size={22} color="#52b788" />,
+      invoice:   <FaFileInvoiceDollar size={22} color="#e9c46a" />,
+      handshake: <FaHandshake size={22} color="#52b788" />,
+      trophy:    <FaTrophy size={22} color="#e9c46a" />,
+      globe:     <FaGlobe size={22} color="#52b788" />,
+    }
+    return icons[name] || null
+  }
   const [showCert, setShowCert] = useState(false);
   const { total, eScore, sScore, gScore, maxE, maxS, maxG } = scores;
   const grade = getGrade(total);
@@ -90,7 +111,12 @@ export default function Results({ answers, businessInfo, scores, onRestart }) {
         {breakdownData.map(b => (
           <div className="breakdown-card" key={b.name}>
             <div className="breakdown-icon">
-              {b.name === 'Environment' ? '🌱' : b.name === 'Social' ? '👥' : '🏢'}
+              { b.name === 'Environment' 
+                ? <FaLeaf color="#52b788" size={28} /> 
+                : b.name === 'Social' 
+                ? <FaUsers color="#e9c46a" size={28} /> 
+                : <FaBuilding color="#74b3ce" size={28} /> 
+              }
             </div>
             <div className="breakdown-label">{b.name}</div>
             <div className="breakdown-score">{b.score}</div>
@@ -150,7 +176,7 @@ export default function Results({ answers, businessInfo, scores, onRestart }) {
         <h3>💡 Your Personalised Recommendations</h3>
         {recommendations.map((r, i) => (
           <div className="reco-item" key={i}>
-            <div className="reco-icon">{r.icon}</div>
+            <div className="reco-icon"><RecoIcon name={r.iconName} /></div>
             <div className="reco-content">
               <h4>{r.title}</h4>
               <p>{r.desc}</p>
@@ -163,14 +189,16 @@ export default function Results({ answers, businessInfo, scores, onRestart }) {
       </div>
 
       {/* Action Buttons */}
-      <div className="action-btns">
-        <button className="btn-cert" onClick={() => setShowCert(true)}>
-          📄 Download Certificate
-        </button>
-        <button className="btn-restart" onClick={onRestart}>
-          🔄 Retake Assessment
-        </button>
-      </div>
+      <button className="btn-cert" onClick={() => setShowCert(true)}>
+        <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}>
+          <FaFileAlt size={16} /> Download Certificate
+        </span>
+      </button>
+      <button className="btn-restart" onClick={onRestart}>
+        <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}>
+          <FaRedo size={14} /> Retake Assessment
+        </span>
+      </button>
 
       {showCert && (
         <CertificateModel

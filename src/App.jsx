@@ -3,6 +3,7 @@ import Landing from './Pages/Landing';
 import Quiz from './Pages/Quiz';
 import Results from './Pages/Results';
 import { calculateScores } from './data/questions';
+import { GiPlantSeed } from 'react-icons/gi'
 
 export default function App() {
   const [page, setPage] = useState('landing'); // 'landing' | 'quiz' | 'results'
@@ -24,7 +25,7 @@ export default function App() {
       {/* NAV */}
       <nav>
         <div className="nav-logo">
-          Green<span>Rupee</span> 🌿
+          Green<span>Rupee</span> <GiPlantSeed style={{ display: 'inline', verticalAlign: 'middle', color: '#52b788' }} />
         </div>
         <div className="nav-links">
           <button

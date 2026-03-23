@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaLeaf, FaUsers, FaBuilding, FaCheckCircle } from 'react-icons/fa';
 import { questions } from '../data/questions';
 
 export default function Quiz({ onComplete }) {
@@ -146,7 +147,10 @@ export default function Quiz({ onComplete }) {
 
       <div className="question-card" key={q.id}>
         <div className={`question-category ${catColors[q.category]}`}>
-          {q.categoryLabel}
+          {q.category === 'E' && <FaLeaf style={{ marginRight: 5 }} />}
+          {q.category === 'S' && <FaUsers style={{ marginRight: 5 }} />}
+          {q.category === 'G' && <FaBuilding style={{ marginRight: 5 }} />}
+          {q.category === 'E' ? 'Environment' : q.category === 'S' ? 'Social' : 'Governance'}
         </div>
         <div className="question-text">{q.text}</div>
         <div className="options-grid">
@@ -156,7 +160,9 @@ export default function Quiz({ onComplete }) {
               className={`option-btn ${selected === idx ? 'selected' : ''}`}
               onClick={() => handleSelect(idx)}
             >
-              <span className="option-dot" />
+              <span className="option-dot">
+                {selected === idx}
+              </span>
               {opt.label}
             </button>
           ))}
@@ -168,7 +174,7 @@ export default function Quiz({ onComplete }) {
           ← Back
         </button>
         <button className="btn-next" onClick={handleNext} disabled={selected === null}>
-          {current + 1 === totalQ ? 'See My Score 🎯' : 'Next →'}
+          {current + 1 === totalQ ? 'See My Score' : 'Next →'}
         </button>
       </div>
     </div>

@@ -1,3 +1,4 @@
+import { FaLeaf, FaClock, FaRupeeSign , FaFileAlt, FaRocket, FaChartBar } from 'react-icons/fa';
 import React from 'react';
 
 export default function Landing({ onStart }) {
@@ -5,7 +6,7 @@ export default function Landing({ onStart }) {
     <div>
       {/* HERO */}
       <section className="hero">
-        <div className="hero-badge">🌱 Free ESG Tool for MSMEs</div>
+        <div className="hero-badge"><FaLeaf style={{ marginRight: 6, color: '#e9c46a' }} />Free ESG Tool for MSMEs</div>
         <h1>
           Prove your business is<br />
           <em>sustainable</em> — in 2 minutes
@@ -24,7 +25,7 @@ export default function Landing({ onStart }) {
             <div className="lbl">MSMEs in India</div>
           </div>
           <div className="hero-stat">
-            <div className="num">2 min</div>
+            <div className="num"><FaClock style={{ fontSize: 18, color: '#e9c46a' }} /> 2 Min</div>
             <div className="lbl">To get scored</div>
           </div>
           <div className="hero-stat">
@@ -40,10 +41,10 @@ export default function Landing({ onStart }) {
         <h2 className="section-title">From zero to ESG-ready in 4 steps</h2>
         <div className="steps-grid">
           {[
-            { num: '01', icon: '📝', title: 'Answer 13 Questions', desc: 'Simple yes/no and multiple-choice questions about energy, workers, and records.' },
-            { num: '02', icon: '🧮', title: 'Get Your Score', desc: 'Instantly see your Environment, Social & Governance scores out of 100.' },
-            { num: '03', icon: '📄', title: 'Download Certificate', desc: 'A professional PDF certificate you can share with banks and buyers.' },
-            { num: '04', icon: '🚀', title: 'Improve & Grow', desc: 'Get personalised recommendations to boost your score and unlock benefits.' },
+            { num: '01', icon: <FaFileAlt style={{ fontSize: 28, color: '#2d6a4f' }} />, title: 'Answer 13 Questions', desc: 'Simple yes/no and multiple-choice questions about energy, workers, and records.' },
+            { num: '02', icon: <FaChartBar style={{ fontSize: 28, color: '#2d6a4f' }} />, title: 'Get Your Score', desc: 'Instantly see your Environment, Social & Governance scores out of 100.' },
+            { num: '03', icon: <FaFileAlt style={{ fontSize: 28, color: '#2d6a4f' }} />, title: 'Download Certificate', desc: 'A professional PDF certificate you can share with banks and buyers.' },
+            { num: '04', icon: <FaRocket style={{ fontSize: 28, color: '#2d6a4f' }} />, title: 'Improve & Grow', desc: 'Get personalised recommendations to boost your score and unlock benefits.' },
           ].map(s => (
             <div className="step-card" key={s.num}>
               <div className="step-num">{s.num}</div>
